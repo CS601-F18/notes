@@ -75,7 +75,75 @@ The instructor may add new projects to your repositories as new work is assigned
 
 ## Maven
 
-[Maven](https://maven.apache.org/) is a project management tool we will use for this class. It provides a useful way to describe how to build software and manage its dependencies. You will notice that your projects will contain a file `pom.xml`. This file specifies how to compile the project and any other packages on which the project depends. *Do not modify this file!* In most cases, the instructor will provide this file for you, and this file will be used by the system that builds and tests your program when it is committed to github. 
+[Maven](https://maven.apache.org/) is a project management tool we will use for this class. It provides a useful way to describe how to build software and manage its dependencies. You will notice that your projects will contain a file `pom.xml`. This file specifies how to compile the project and any other packages on which the project depends. *Do not modify this file!* In most cases, the instructor will provide this file for you, and this file will be used by the instructor and TAs to grade your solution. 
+
+## Getting Started
+
+The instructions below demonstrate how to get started using Eclipse, the Egit plugin, and github to complete and submit a practice assignment.
+
+### Create your repo
+
+The instructor will provide you with a link to a README file that outlines the requirements of the assignment. The README will include a link that will allow you to create your own repository for the assignment at the bottom of the page under the heading **Submission Requirements**. 
+
+1. Click the link.
+2. Select `Accept this assignment`.
+3. It can take a minute or two for the import to complete.
+
+### Clone the repo
+
+1. Visit the web page of your repository, which will look something like: `https://github.com/CS601-F18/practice-easy-<username>`
+2. Select `Clone or download` and copy the web URL.
+3. Open Eclipse, specifying the workspace where you want to put the new project.
+4. Select `File` > `Import` > `Git` > `Projects from Git`.
+5. Select `Clone URI`.
+6. In the URI field, enter the URL from step #2 and make sure your github credentials are correct.
+7. In the Local Destination, make sure to select the directory where you want to store the code. It will default to a /.../git directory.
+8. Select `Import as general project`.
+
+At this point, you should now have a copy of your repository on your local computer.
+
+### Convert to Maven Project
+
+You will now need to tell Eclipse that this is not a "general" project, but a Maven project. Because of the way the github repos are set up (to allow students to use IDEs other than Eclipse) you cannot just import as a Maven project directly.
+
+1. Right-click on the name of the project (e.g., `practice-easy-<username>`) in the Package Explorer.
+2. Select `Configure` > `Convert to Maven Project`.
+
+At this point, if you expand the project in your Package Explorer you should see something like the following:
+
+![maven](images/maven.png)
+
+
+### Edit your code
+
+You may now edit your code.
+
+:warning: Make sure that you do not modify anything in the `src/test/java` directory. 
+
+You are expected to create your own test cases in addition to those provided. You can use JUnit and/or develop your own Driver classes to help you during development.
+
+There are several ways to run the unit tests.
+
+Option 1: To run an individual set of tests right-click on the JUnit test class (e.g., `SayHelloTest.java`) and select `Run As` > `JUnit Test`.
+
+Option 2: To run all tests right-click on the project and select `Run As` > `Maven test`.
+
+Of course, you can also run from the command line, using either Java or Maven.
+
+### Commit your changes
+
+:warning: Commit your changes early and often! I cannot stress this enough. You should commit your changes anytime you make any change to your code.
+
+1. Right-click on the project and select `Team` > `Add to index`.
+2. Right-click on the project and select `Team` > `Commit`. This should bring up the Git Staging view and you should see one or more files under `Staged Changes` (bottom left pane).
+3. You do *not* need to commit any of the Eclipse configuration files including `.classpath`, `.project`, any the files in `.settings`.
+4. In the right pane enter a `Commit Message`. This should be a description of the change you are committing. It is important that this be a useful message, for example "Completed sayHello method -- SayHello tests passing.".
+5. Select `Commit and Push`. This will push your changes to github!
+
+:warning: It is very important that you select `Commit and Push`. If you just select `Commit` then your changes will not appear on github.
+
+**Double check** your solution was pushed to github. Visit the repository URL and verify that the code that is checked in is the code you intended to push. *Do not skip this step!* 
+
 
 <!--## Travis
 
