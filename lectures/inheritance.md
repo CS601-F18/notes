@@ -164,11 +164,3 @@ class Employee {
 
  * Could getID() refer to method setCompanyName()?
  * Could setCompanyName() refer to getID()? 
-
-**11. Is the following class method definition equivalent/valid to the above definition?**
-
-```java
-  static public void setCompanyName(String n) {
-    this.companyName = n;
-  }
-```
