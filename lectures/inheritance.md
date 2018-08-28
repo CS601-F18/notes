@@ -152,7 +152,7 @@ class FlyingSquirrel {
 class Employee {
     String ID;
     static String companyName;
-    static public void setCompanyName(String n) {
+    public static void setCompanyName(String n) {
         companyName = n;
     }
     public String getID() {
