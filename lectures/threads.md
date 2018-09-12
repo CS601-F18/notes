@@ -213,6 +213,51 @@ If a call to a method blocks that means it does not return until something happe
 A non-blocking method may execute a task asynchronously so that it may return without blocking the caller.
 
 
+### busy-wait
 
+If a thread needs to block until another has completed some action it is generally better practice to use `wait` and `notify` rather than a busy-wait loop that consumes CPU cycles as below:
 
+```java
+package concurrency;
 
+public class BusyWaiter {
+
+	volatile boolean finished = false;
+
+	public static void main(String[] args) {
+
+		BusyWaiter bw = new BusyWaiter();
+
+		Thread t1 = new Thread() {
+			public void run() {
+				//replace this while loop with a call to wait()
+				while(!bw.finished) {} // <- not a good solution!
+				System.out.println("finished!");
+			}
+		};
+
+		Thread t2 = new Thread() {
+			public void run() {
+				System.out.println("doing some stuff that takes awhile...");
+				for(int i = 0; i < Integer.MAX_VALUE; i++) {
+					//doing some stuff
+				}
+				//replace this boolean update with a call to notify
+				bw.finished = true;
+			}
+		};
+
+		t1.start();
+		t2.start();
+
+		try {
+			t1.join();
+			t2.join();
+		} catch(InterruptedException ie) {
+
+		}
+
+	}	
+
+}
+```
