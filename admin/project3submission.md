@@ -21,7 +21,7 @@ Project 3 Submission Guidelines
 6. Functionality check appointments may be scheduled on the [functionality check appointment calendar](https://calendar.google.com/calendar/selfsched?sstoken=UUFES3ZubHpYZXF3fGRlZmF1bHR8YTBiYWJjZjM3MTdjY2Q5ZjZhOTQ3ZDVlZDI1MmJhNjg). Appointments are THREE (3) minutes long. Do not sign up unless you are certain your solution will be complete, well tested, and deployed to your primary microcloud VM node by the appointment time.
 
 #### Other Advice 
-1. You may limit the size of the `InvertedIndex` used in Part 2 to 20,000 records.
+1. You may limit the size of the `InvertedIndex` used in Part 2 to 10,000 records.
 2. It is strongly recommended that you implement thorough logging in your solution. This will help you debug if you come for the functionality check and fail. Your logs should indicate which requests were made to your server and where your server went wrong.
 3. Consider using curl or another client program to test your deployed solution. Below are a few requests to get you started.
 
