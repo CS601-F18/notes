@@ -59,4 +59,6 @@ A partial list of topics covered on the exam is as follows:
 - Project 3 design and implementation
 - Project 4 design  
   * It is advised that you make some progress on Project 4 prior to the exam!
+- Side Project design
+  * It is advised that you make some progress on the side project prior to the exam!
 - Anything else posted on the class website ;)
